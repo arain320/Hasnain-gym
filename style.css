@@ -1,0 +1,648 @@
+@import url("https://fonts.googleapis.com/css2?family=Fasthand&family=Kanit:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&display=swap");
+:root {
+  --light-red: #e6022d;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+  text-transform: capitalize;
+  outline: none;
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+}
+*::selection {
+  background: var(--light-red);
+  color: #fff;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: var(--light-red);
+  color: #fff;
+  outline: none;
+  border: none;
+  padding: 0.5rem 3rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.btn:hover {
+  transform: scale(0.9);
+}
+.animate-character {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    green 0%,
+    blue 29%,
+    yellow 67%,
+    red 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 4rem;
+  font-weight: 900;
+  text-align: center;
+}
+.animate-heading {
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    rgb(57, 85, 57) 0%,
+    rgb(0, 204, 255) 29%,
+    rgb(14, 13, 13) 67%,
+    var(--light-red) 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 4rem;
+  font-weight: 900;
+  text-align: center;
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.heading {
+  display: inline-block;
+  color: #333;
+  font-size: 3rem;
+  border-bottom: 0.2rem solid var(--light-red);
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 2rem 3rem;
+}
+
+header .logo {
+  font-size: 3rem;
+  color: #fff;
+}
+
+header .logo span {
+  color: var(--light-red);
+}
+
+header .navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header .navbar ul li {
+  margin: 0 1rem;
+}
+
+header .navbar ul li a {
+  color: #fff;
+  font-size: 2rem;
+  font-family: "Kanit", sans-serif !important;
+}
+
+header .navbar ul li a.active,
+header .navbar ul li a:hover {
+  color: var(--light-red);
+}
+
+header #menu {
+  font-size: 3rem;
+  color: var(--light-red);
+  cursor: pointer;
+  display: none;
+}
+
+header.header-active {
+  background: #fff;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.3);
+}
+
+header.header-active .logo,
+header.header-active .navbar a {
+  color: #333;
+}
+
+.home {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/home.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+}
+
+.home h1 {
+  font-size: 6rem;
+  font-weight: 800;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0.3rem 0.5rem #000;
+  padding: 0 1rem;
+  text-transform: uppercase;
+}
+.home h1 span {
+  color: var(--light-red);
+}
+.home .btn {
+  box-shadow: 0 0.3rem 0.5rem #000;
+  color: #fff;
+}
+#about {
+  height: auto;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.about-heading h3 {
+  color: #333;
+  font-size: 4rem;
+}
+.about-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.about-container .image {
+  width: 50%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#about .image img {
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+}
+
+.about-container .content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+#about .content .heading span {
+  color: var(--light-red);
+}
+
+#about .content p {
+  font-size: 2rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  line-height: 1.5;
+}
+#about .buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+#about .buttons h1 span {
+  color: var(--light-red);
+}
+#about .buttons .gym-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#about .buttons button {
+  height: 4rem;
+  width: 14rem;
+  background: transparent;
+  border: 0.2rem solid var(--light-red);
+  outline: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: --light-red;
+  font-weight: bold;
+  margin: 2rem 2rem 2rem 0;
+}
+
+#about .buttons button:hover {
+  background: var(--light-red);
+  color: #fff;
+}
+
+.service {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.service .box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.service .box-container .box {
+  height: 23rem;
+  width: 35rem;
+  margin: 1rem;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+
+.service .box-container .box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.service .box-container .box .info {
+  height: 90%;
+  width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+.service .box-container .box:hover .info {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.service .box-container .box .info h3 {
+  font-size: 2.5rem;
+  color: #333;
+}
+.service .box-container .box .info p {
+  padding: 0.5rem;
+  overflow: hidden;
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.4;
+  text-align: justify;
+}
+
+.trainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.trainer .heading {
+  color: #fff;
+}
+
+.trainer .box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.trainer .box-container .box {
+  height: 40rem;
+  margin: 1.5rem 1rem;
+  width: 27rem;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0.3rem 0.5rem #000;
+}
+.trainer .box-container .box:hover img {
+  transform: scale(1.2);
+}
+.trainer .box-container .box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.trainer .box-container .box .info {
+  color: #333;
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 2rem;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.trainer .box-container .box .share {
+  position: absolute;
+  top: 1rem;
+  right: -100%;
+  display: flex;
+  flex-flow: column;
+}
+
+.trainer .box-container .box:hover .share {
+  right: 0;
+}
+
+.trainer .box-container .box .share a {
+  height: 4rem;
+  width: 4.5rem;
+  line-height: 4rem;
+  color: #333;
+  font-size: 2rem;
+  background: #fff;
+  margin: 0.5rem 1rem;
+}
+
+.trainer .box-container .box .share a:hover {
+  background: var(--light-red);
+  color: #fff;
+}
+
+.plan {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.plan .box-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.box-container .columns {
+  width: 30rem;
+  box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.3);
+  float: left;
+  padding: 8px;
+}
+
+.box-container .price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  transition: 0.3s;
+}
+
+.box-container .price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.box-container .price .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+.box-container .price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.box-container .price .grey {
+  background-color: #eee;
+  color: var(--light-red);
+  font-size: 2rem;
+}
+
+.button {
+  background-color: var(--light-red);
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.register {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  position: relative;
+  margin-top: 3rem;
+}
+.register::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(./images/muscle-2459720__340.jpg) no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -10;
+  opacity: 0.7;
+}
+.register .heading {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-top: 1rem;
+  color: #fff;
+}
+.register .register-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register .register-container form {
+  width: min(600px, 100%);
+  margin: 0 auto;
+}
+.register .register-container form label {
+  color: #fff;
+  font-size: 1.4rem;
+  padding-left: 0.5rem;
+}
+::placeholder {
+  color: #e6dddd;
+  font-size: 1.4rem;
+}
+input[type="text"],
+input[type="email"],
+input[type="mobile"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: var(--light-red);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+input[type="submit"]:hover {
+  transform: scale(0.9);
+}
+
+.footer {
+  color: #eee;
+  background: #111;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 2rem;
+  margin-top: 3rem;
+}
+.footer .res-text {
+  font-size: 2rem;
+}
+
+/* media queries  */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+  }
+  .about-container .image {
+    width: 100%;
+  }
+
+  .about-container .content {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 55%;
+  }
+
+  header #menu {
+    display: block;
+  }
+
+  header .navbar {
+    position: fixed;
+    top: -100rem;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    background: #fff;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.3);
+  }
+
+  header .navbar ul {
+    flex-flow: column;
+    padding: 2rem 0;
+  }
+
+  header .navbar ul li {
+    margin: 1rem 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  header .navbar ul li a {
+    font-size: 2.5rem;
+    color: #333;
+    display: block;
+  }
+
+  header .navbar.nav-toggle {
+    top: 8rem;
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+  .home h1 {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 500px) {
+  html {
+    font-size: 50%;
+  }
+}
